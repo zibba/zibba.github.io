@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title> Yuhuang Xie - Portfolio </title>
+	<meta charset = "utf-8">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- font-awesome -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- jQuery library -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<!-- Latest compiled JavaScript -->
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+  	<!--JS-->
+  	<script type="text/javascript">
+		$(document).ready(function(){
+			$('a[href^="#nav"]').click(function(event){
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top 
+				}, 900);
+			});
+
+			// need to deal with the header-down butten separately
+			$('#down').click(function() {
+				$('html,body').animate({
+					scrollTop: $('#navabout').offset().top - 50
+				}, 900);
+			});
+		});
+  	</script>
+
+
+
+
+
+
+
+
+  	<!--CSS-->
+  	<link href='https://fonts.googleapis.com/css?family=Lato:100,300italic,400,700,900' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
+
+  	<style>
+
+		nav {
+			position: fixed;
+			top: 6rem;
+			height: 100vh;
+			width: 6rem;
+			background: #555;
+			overflow: hidden;
+			transition: width .3s ease;
+			text-decoration: none;
+		}
+
+		.ml{
+			margin-left:5%;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		#logo{
+			background:#ff6600;
+			text-align:center;
+			font-weight: 300;
+			height: 5rem;
+			font-family: Roboto,'Helvetica Neue', Helvetica, sans-serif;
+			font-size: 1.2em;
+		}
+
+		.banner {
+			position: fixed;
+			z-index: 10;
+			top: 0px;
+			width: 100%;
+			height: 6rem;
+			background: rgba(85, 85, 85, 1);
+		}
+
+		nav:hover, nav.pinned {
+			width: 15rem;
+			text-decoration: none;
+		}
+
+		nav a {
+			color: #EEE;
+			text-decoration: none;
+			display: table;
+			width: 15rem;
+		}
+
+		nav a.active .fa {
+			border-left: 3px solid #f60;
+			border-right: 3px solid transparent;
+		}
+
+		nav a:hover {
+			text-decoration: none;
+			background: #444;
+			color: #BEE0ff;
+		}
+
+		nav a .fa {
+			width: 6rem;
+			display: table-cell;
+			font-size: 3rem;
+			padding: 1.5rem 0.2rem;
+			text-align: center;
+		}
+
+		.label {
+			display: table-cell;
+			font-size: 1.2em;
+		}
+
+		section {
+			padding: 1rem 5rem 2rem $nav-width-collapsed+5;
+			min-height:100vh;
+			h1 { font-family:Raleway, Roboto, sans-serif; font-size:2.5rem; }
+		}
+
+		#navheader {
+			padding: 1rem 5rem 2rem $nav-width-collapsed+5;
+			min-height:100vh;
+		}
+
+		#navdown{
+			position: absolute;
+			opacity: 0.2;
+			left: 48%;
+			bottom: 10%;
+			cursor: pointer;
+			border-radius: 15px;
+		}
+
+		#navdown:hover{
+			opacity: 1.0;
+		}
+
+		.tagline1{
+			font-family: 'lato', sans-serif;
+			font-size: 3.5em;
+			font-weight: 300;
+			font-style: italic;
+			color: #000000;
+			text-align: left;
+			padding-top: 1px;
+			text-shadow: 1px 1px black;
+		}
+
+		.tagline2{
+			font-family: 'lato', sans-serif;
+			font-size: 8em;
+			letter-spacing: 3px;
+			line-height: 0.95em;
+			font-weight: 100;
+			color:#000000;
+			text-align: left;
+			text-shadow: 1px 1px black;
+			padding-top: 2px;
+		}
+
+		.tagline3b{
+			font-family: 'courier', sans-serif;
+			font-size: 1.75em;
+			font-style: italic;
+			color: #000000;
+			text-align: left;
+			line-height: 1em;
+			text-shadow: 1px 1px black;
+			padding-top: 50px;
+		}
+
+		#navheader{
+			margin-top:80;
+			padding-top: 80px;
+			padding-bottom: 100px;
+			height: 100vh;
+			width: 100vw;
+			background-image: url("https://raw.githubusercontent.com/zibba/web/master/pic/main%20page.PNG");
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			background-color: rgb(28, 28, 28);
+  			color: white;
+		}
+
+		#navabout{
+			width: 100vw;
+			padding-bottom: 50px;
+			padding-top:80px;
+		}
+
+		.section-banner {
+			padding-top: 10px;
+			padding-bottom: 50px;
+		}
+
+		.line {
+			height: 3px;
+			width: 100px;
+			position: relative;
+			top: -12px;
+			display: inline-block;
+			background-color: #999;
+			background-color: rgba(0, 0, 0, 0.54);
+		}
+
+		.section-title {
+			font-family: 'lato', sans-serif;
+			font-size: 3.5em;
+			font-weight: 900;
+			font-style: italic;
+			text-align: center;
+			padding-top: 0px;
+			padding-left: 15px;
+			padding-right: 15px;
+			color: rgba(0, 0, 0, 0.54);
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.75);
+		}
+
+		.section-sub-title {
+			font-family: 'lato', sans-serif;
+			font-size: 2em;
+			font-weight: 900;
+			font-style: italic;
+			text-align: center;
+			padding-top: 0px;
+			padding-left: 15px;
+			padding-right: 15px;
+			color: rgba(0, 0, 0, 0.54);
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.75);
+		}
+
+		.maxabout{
+			max-width:1250px;
+			margin:auto;
+		}
+
+		.textline{
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.3em;
+			line-height: 1.7em;
+			letter-spacing: 0.03em;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		.textline1{
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.3em;
+			line-height: 1.7em;
+			letter-spacing: 0.03em;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		.icon-about {
+			padding-top: 20px;
+			padding-bottom: 25px;
+			width:128px; 
+			height:173px;
+		}
+
+		#navproject{
+			background-color:#eedfcc;
+			padding-top:80px;
+		}
+
+		.card {
+			position: relative;
+			width: 300px;
+			height: 345px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+			-webkit-perspective: 2000px;
+			-moz-perspective: 2000px;
+			perspective: 2000px;
+			cursor: pointer;
+		}
+
+		.card_front, .card_back {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: inherit;
+			height: inherit;
+			border-style: solid;
+			border-width: 0px;
+			border-radius: 6px;
+			border-color: #666;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			-webkit-transition: -webkit-transform 0.9s ease-in-out;
+			transition: transform 0.9s ease-in-out;
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+		}
+
+		.card_front {
+			background-color: white;
+		}
+
+		.project-title {
+			font-family: 'Lato', sans-serif;
+			font-size: 1.5em;
+			font-weight: 500;
+			padding-top: 4px;
+			padding-bottom: 0px;
+			color: #666;
+			text-align: center;
+		}
+
+		.overlay {
+			position: fixed;
+			z-index:999;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.5);
+			transition: opacity 200ms;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.overlay.light {
+			background: rgba(255, 255, 255, 0.5);
+		}
+
+		.overlay .cancel {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			cursor: default;
+		}
+
+		.overlay:target {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.popup {
+			margin: 75px auto;
+			padding: 20px;
+			background: #fff;
+			border: 1px solid #666;
+			width: 300px;
+			box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+			position: relative;		  
+		}
+
+		.light .popup {
+			border-color: #aaa;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+		}
+
+		.popup h2 {
+			margin-top: 0;
+			color: #666;
+			font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+		}
+
+		.popup .close {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			top: 20px;
+			right: 20px;
+			opacity: 0.8;
+			transition: all 200ms;
+			font-size: 24px;
+			font-weight: bold;
+			text-decoration: none;
+			color: #666;
+		}
+
+		.popup .close:hover {
+			opacity: 1;
+		}
+
+		.popup .content {
+			max-height: 400px;
+			overflow: auto;
+		}
+
+		.popup p {
+			margin: 0 0 1em;
+		}
+
+		.popup p:last-child {
+			margin: 0;
+		}
+
+		.maxproject{
+			max-width: 1200px;
+			margin:auto;
+		}
+
+		@media screen and (max-width: 700px){
+			.box{
+				width: 70%;
+			}
+		}
+
+		#navcontact{
+			margin-top: 80px;
+			padding-top: 80px;
+			padding-bottom: 100px;
+		}
+
+		#down {
+			position: absolute;
+			opacity: 0.20;
+			left: 48%;
+			bottom: 10%;
+			cursor: pointer;
+			border-radius: 15px;
+		}
+
+		.highlight {
+			opacity: 0.6;
+		}
+
+		.highlight:hover {
+			background-color: #FFF;
+			opacity: 1;
+		}
+
+		#footer {
+			width: 100%;
+			text-align: center;
+			color: white;
+			background-color: black;
+		}
+
+		#footer ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+
+
+		#footer ul li {
+			display: inline;
+			padding: 0.4em;
+		}
+
+		#footer a {
+			/*  color: #939393 !important; */
+			color: white !important;
+		}
+
+		footer {
+			width: 100vw;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			padding: 1% 5%;
+			text-align: center;
+			background-color: #555;
+			opacity: 1;
+			z-index: 100;
+			margin-bottom: -20px;
+			a {
+				font-weight: 500;
+				text-decoration: none;
+			}
+		}
+
+		.blacktext {
+			color: black;
+		}
+
+  	</style>
+</head>
+
+
+
+
+
+<!-- https://raw.githubusercontent.com/zibba/web/master/pic/main%20page.PNG -->
+
+
+
+
+	<!--HTML-->
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	<div class="container-fluid banner">
+		<div class="row">
+
+		</div>
+	</div>
+
+
+
+	<nav>
+		<a id="logo">
+			<span class="fa fa-hand-o-down"></span>
+			<span class="label">xie</span>
+		</a>
+		<a href="#navheader" title="Home">
+			<span class="fa fa-home"></span>
+			<span class="label">Home</span>
+		</a>
+		<a href="#navabout" title="About" class="active">
+			<span class="fa fa-user"></span>
+			<span class="label">About</span>
+		</a>
+		<a href="#navproject" title="Project">
+			<span class="fa fa-pencil"></span>
+			<span class="label">Project</span>
+		</a>
+		<a href="#navcontact" title="Contact">
+			<span class="fa fa-envelope"></span>
+			<span class="label">Contact</span>
+		</a>
+	</nav>
+  
+
+
+	<header id="navheader">
+		<div class="container-fluid ml">
+			<div class="row">
+        		
+			</div>
+
+			<div id="down" class="btn btn-circle highlight" style="margin-left:0%;">
+				<i class="fa fa-chevron-circle-down fa-4x"></i>
+			</div>
+		</div>
+	</header>
+
+
+
+  
+	<div id = "navabout" class = "container-fluid ">
+
+		<div class="row section-banner ml">
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<div>
+					<span class="line"></span>
+					<span class="section-title">about</span>
+					<span class="line"></span>
+				</div>
+			</div>
+		</div>
+	    
+		<div class="row ml">
+			<div class="col-xs-6 col-xs-offset-3 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 text-center">
+			  <div class="textline1">
+					<p> Yuhuang Xie, professional software engineer, has 5 years coding experience. As game designer at same time, I try to design a website for myself. Since this website is still on working and it is the first time for me to build the webpage, there may be some tiny bugs. I have passion in being a website designer after I build this webpage. </p>
+		        <br>
+		        <br>
+		        <br>
+			</div>
+		</div>	
+
+	</div>
+    
+    
+    <div class="row text-center ml"> <!-- 比较好的做法是用一个max class把最大的宽度限制回来 -->
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="row maxabout">  
+
+				<div class="col-sm-4">
+					<p class="section-sub-title"> Code </p>
+					<img src="https://raw.githubusercontent.com/zibba/web/7f37de538ff492fc31c3b62f70171fbcc2141ebc/pic/code.png" class="icon-about">
+					<p class="textline1"> C++, Java </p>
+					<p class="textline1"> HTML, CSS, BootStrap </p>
+					<p class="textline1"> JavaScript, JQuery </p>
+					<p class="textline1"> Git</p>
+				</div>
+
+				<div class="col-sm-4">
+					<p class="section-sub-title"> Game design </p>
+					<img src="https://raw.githubusercontent.com/zibba/web/7f37de538ff492fc31c3b62f70171fbcc2141ebc/pic/game%20design.png" class="icon-about">				
+					<p class="textline1"> Level design</p>
+					<p class="textline1"> Sound design</p>
+					<p class="textline1"> User interface design</p>
+					<p class="textline1"> User experience design</p>				
+					<p class="textline1"> Storytelling </p>
+					<p class="textline1"> Design of interactive experience</p>		
+				</div>
+
+				<div class="col-sm-4">
+					<p class="section-sub-title"> Knowledge </p>
+					<img src="https://raw.githubusercontent.com/zibba/web/7f37de538ff492fc31c3b62f70171fbcc2141ebc/pic/book.png" class="icon-about">
+					<p class="textline1"> Design of software engineer</p>
+					<p class="textline1"> System dynamic</p>
+					<p class="textline1"> Production management for game</p>
+					<p class="textline1"> Immersive human-computer interactive</p>
+					<p class="textline1"> The psychology of video games </p>			
+					<p class="textline1"> Game modeling </p>
+				</div>
+	    	</div>
+	    </div>
+	</div>
+
+  
+    
+    
+	<div id = "navproject" class="container-fluid ">
+    
+		<div class="row section-banner ml">
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<div>
+          			<br>
+					<span class="line"></span>
+					<span class="section-title">project</span>
+					<span class="line"></span>
+				</div>
+			</div>
+		</div>
+
+   		<div class="row ml">
+			<div class="col-xs-6 col-xs-offset-3 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 text-center">
+				<div class="textline1">
+					<p> These are my selected projects I have done before, including games, systems, and webpages. And this portfolio is coding by me with FreeCodeCamp.FFC helped so much that I could not even verbally describe my appreciation. The details of these projects can be accessed by a simple click on the cards.  </p>
+				
+				</div>
+			</div>
+		</div>
+    
+    
+    
+    
+	<!-- popup session -->  
+		<div class="row text-center splited-aspects ml">
+			<div class="col-sm-10 col-sm-offset-1">
+
+				<div class="row maxproject">    
+					<div class="col-sm-4" id="cv1">
+						<div class="card">
+							<div class="card_front">
+								<a href="#popup1">
+								<figure>
+									<img class="image-responsive" src="https://raw.githubusercontent.com/zibba/web/master/pic/ar.png" style="border-radius: 6px;">
+									<figcaption class="project-title">
+										Abuse Report System
+									</figcaption>
+								<figure>
+								</a>
+							</div>
+						</div>
+					</div>              
+              
+					<div class="col-sm-4">
+						<div class="card">
+							<div class="card_front">
+								<a href="#popup2">
+									<figure>
+									<img class="image-responsive" src="https://raw.githubusercontent.com/zibba/web/master/pic/00000001048.png" style="border-radius: 6px;">
+										<figcaption class="project-title">
+											Doc Management System
+										</figcaption>
+									<figure>
+								</a>
+							</div>
+						</div>
+					</div>
+              
+					<div class="col-sm-4">
+						<div class="card">
+							<div class="card_front">
+								<a href="#popup3">
+									<figure>
+									<img class="image-responsive" src="https://raw.githubusercontent.com/zibba/web/master/pic/df.png" style="border-radius: 6px;">
+										<figcaption class="project-title">
+											Defying Disaster
+										</figcaption>
+									<figure>
+								</a>
+							</div>
+						</div>
+					</div>       
+          
+					<div class="col-sm-4">
+						<div class="card">
+							<div class="card_front">
+								<a href="#popup4">
+									<figure>
+									<img class="image-responsive" src="https://raw.githubusercontent.com/zibba/web/master/pic/jb.png" style="border-radius: 6px;">
+										<figcaption class="project-title">
+											Jump Singing Ball
+										</figcaption>
+									<figure>
+								</a>
+							</div>
+						</div>
+					</div>
+          
+					<div class="col-sm-4">
+						<div class="card">
+							<div class="card_front">
+								<a href="#popup5">
+									<figure>
+									<img class="image-responsive" src="https://raw.githubusercontent.com/zibba/web/master/pic/lost%20island.jpg" style="border-radius: 6px;">
+										<figcaption class="project-title">
+											Lost Island
+										</figcaption>
+									<figure>
+								</a>
+							</div>
+						</div>
+					</div>
+          
+					<div class="col-sm-4">
+						<div class="card">
+							<div class="card_front">
+								<a href="#popup6">
+									<figure>
+									<img class="image-responsive" src="https://raw.githubusercontent.com/zibba/web/master/pic/new%20jq.png" style="border-radius: 6px;">
+										<figcaption class="project-title">
+											Jewelry Queen
+										</figcaption>
+									<figure>
+								</a>
+							</div>
+						</div>
+					</div>
+              
+        		</div>
+      		</div>  
+    	</div>
+	</div>  
+    
+    
+	<div class="row">
+		<div id="popup1" class="overlay">
+			<div class="popup">
+			<h2>Abuse Report System</h2>
+			<a class="close" href="javascript:history.back()">&times;</a>
+				<div class="content">
+					<p>Abuse report management system is for health care organization to prevent fake accusations of abuse against staff members. It developed complex MVC Controller, Views and Models to implement the work flow of the abuse report system using Java and Play. The purpose is because of patients' disabilities, they can be hard to work with. They may become violent and need to be restrained at times. The restraints if not properly, it can injure the client. In some situations, patients make false accusations of abuse against staff members. Any of these situations result in an abuse report which must be investigated and resolved.</p>
+				</div>
+			</div>
+		</div>
+	</div> 
+              
+	<div class="row">
+		<div id="popup2" class="overlay">
+			<div class="popup">
+			<h2>Doc Management System</h2>
+			<a class="close" href="javascript:history.back()">&times;</a>
+				<div class="content">
+					<p>This is a document management system for Petroleum Engineering Technology Research Institute, Sinopec. it realized data import with EXCEL format, DBF format according to the logical structure of the existing petroleum engineering research application data base, the goal is that the realization of the automatic corresponding technology between EXCEL format documents and application data base and interactive programming intervention function etc.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div id="popup3" class="overlay">
+			<div class="popup">
+			<h2>Defying Disaster</h2>
+			<a class="close" href="javascript:history.back()">&times;</a>
+				<div class="content">
+					<p>Defying Disaster is a serious game with the features of an adventure game, aiming to teach people professional knowledge and training skills about preparing for and dealing with disasters in an immersive and interactive environment. I am currently in contact with disaster preparedness experts at the Federal Emergency Management Association (FEMA).</p>
+				</div>
+			</div>
+		</div>
+	</div> 
+              
+	<div class="row">
+		<div id="popup4" class="overlay">
+			<div class="popup">
+			<h2>Jump Singing Ball</h2>
+			<a class="close" href="javascript:history.back()">&times;</a>
+				<div class="content">
+					<p>Singing Ball is VR game, allows users to create and save melody with LeapMotion – a somatic input device can track hands in real world. Move hands to hit different notes (Do, Re, etc) to create melody. Developed with Unity3D, Photoshop (Software), MiddleVR (Middleware) and LeapMotion (Hardware).</p>
+				</div>
+			</div>
+		</div>
+	</div>    
+              
+	<div class="row">
+		<div id="popup5" class="overlay">
+			<div class="popup">
+			<h2>Lost Island</h2>
+			<a class="close" href="javascript:history.back()">&times;</a>
+				<div class="content">
+					<p>Lost island is a 3D puzzle game, which developed with Unreal Engineer 4. For ten years, many ships sink in this area around the island, then survivals will drift to the same island by the wind and trap in this island. This island just have one locked house, a light house, and a boat on the top of light house. No one here know how to get this boat for escaping from the island. Finally, they will died in this island, people always call it lost island. Based on the clues in the environment, player should find a way to escape from the island. </p>
+				</div>
+			</div>
+		</div>
+	</div>
+              
+	<div class="row">
+		<div id="popup6" class="overlay">
+			<div class="popup">
+			<h2>Jewelry Queen</h2>
+			<a class="close" href="javascript:history.back()">&times;</a>
+				<div class="content">
+					<p>This game named jewelry queen is an android phone game based on java. This game is a turn card game with 9 levels. Player should find all same cards which is as pair in the levels. I implanted some advertising because this game was ready to put online. The advertising software in this game is the promotion of a well-known app platform in China called dianjoy application platform. </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- The #contact session -->
+	<div id="navcontact" class="container-fluid" >
+
+		<div class="row section-banner ml">
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<div>
+					<span class="line"></span>
+					<span class="section-title about">contact</span>
+					<span class="line"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row max ml" >
+			<div class="col-sm-5 col-sm-offset-1 text-center">
+				<p class="section-sub-title"> Job Hunting </p>
+				<br>
+				<p class="textline1"> I'm currently looking for full-time software engineering position in the US, and I do need VISA sponsorship. To set-up a conversation, please key in your name and email address and send me message. I will get back to you ASAP! </p>
+				<br>
+			</div>
+
+			<div class="col-sm-6 col-sm-offset-1 col-md-4 text-center">
+				<form action="#" method="post">
+					<div class="form-group">
+						<label class="sr-only" for="inputName">Full name</label>
+						<input id="inputName" class="form-control" type="text" placeholder="Yuhuang Xie" required />
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="inputMail" >Email Address</label>
+						<input id="inputMail" class="form-control" type="email" placeholder="yxiewpi@gmail.com" required />
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="inputMessage">Your Message</label>
+						<textarea id="inputMessage" class="form-control" name="message" cols="30" rows="8" required></textarea>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-default" type="submit" value="Hire me" href="#header">Hire me</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- The footer -->
+
+	<footer id="footer">
+		<ul>
+			<li class='highlight'>
+                <a class="fa-stack fa-1x" data-toggle="tooltip" title="Email" data-placement="top" href="mailto:yxie4@gmail.com">                	
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x blacktext"></i>
+                </a>
+            </li>
+
+            <li class='highlight'>
+                <a class="fa-stack fa-1x" data-toggle="tooltip" title="CodePen" data-placement="top" href="http://codepen.io/ziiba/" target="_blank">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-codepen fa-stack-1x blacktext"></i>
+                </a>
+            </li>
+		</ul>
+
+		<div class="text-center copyright">
+			<p> <i class="fa fa-copyright"></i> 2016 Yuhuang Xie, All rights reserved. </p>
+        </div>
+	</footer>
+
+</body>
+
